@@ -1,0 +1,72 @@
+import { Button, HStack, Text, useClipboard, Icon, ButtonProps } from "@chakra-ui/react";
+import React, { useEffect } from "react";
+import { AddressIcon, IAddressIcon } from "./AddressIcon";
+import { humanAddress } from "@repo/utils/FormattingUtils";
+import { Check, Copy } from "react-feather";
+
+interface IAddressButton extends ButtonProps {
+  address: string;
+  showAddressIcon?: boolean;
+  showCopyIcon?: boolean;
+  addressFontSize?: string;
+  buttonSize?: string;
+  addressIconProps?: Omit<IAddressIcon, "address">;
+  digitsBeforeEllipsis?: number;
+  digitsAfterEllipsis?: number;
+}
+export const AddressButton: React.FC<IAddressButton> = ({
+  address,
+  showAddressIcon = true,
+  showCopyIcon = true,
+  addressFontSize = "md",
+  buttonSize = "md",
+  addressIconProps = {},
+  digitsBeforeEllipsis = 6,
+  digitsAfterEllipsis = 4,
+  ...props
+}) => {
+  const { onCopy, hasCopied, setValue } = useClipboard(address);
+
+  const { onClick, ...otherProps } = props;
+
+  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (onClick) onClick(e);
+    if (showCopyIcon) onCopy();
+  };
+
+  useEffect(() => {
+    setValue(address);
+  }, [address, setValue]);
+
+  const spacing = ["xs", "sm"].includes(buttonSize) ? 1 : 2;
+
+  return (
+    <Button
+      data-cy={`address-button-${address}`}
+      size={buttonSize}
+      colorScheme={"gray"}
+      onClick={onClickHandler}
+      {...(showAddressIcon && { paddingLeft: 0 })}
+      paddingY={0}
+      variant="outline"
+      {...otherProps}
+    >
+      <HStack justify={"flex-start"} spacing={spacing} roundedLeft={"md"}>
+        {showAddressIcon && (
+          <AddressIcon address={address} roundedLeft={"md"} {...addressIconProps} />
+        )}
+        <Text fontSize={addressFontSize}>
+          {humanAddress(address, digitsBeforeEllipsis, digitsAfterEllipsis)}
+        </Text>
+        {showCopyIcon && (
+          <Icon
+            data-cy="address-button-copy-icon"
+            boxSize={3}
+            aria-label="Copy Address"
+            as={hasCopied ? Check : Copy}
+          />
+        )}
+      </HStack>
+    </Button>
+  );
+};

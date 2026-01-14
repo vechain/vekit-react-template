@@ -1,0 +1,61 @@
+export const themeColors = {
+  warning: "#FFD700",
+  cyan: "#69F7FF",
+  purple: "#6042DD",
+  lineChart: "#8884d8",
+  chartPurples: [
+    "#6042DD",
+    "#7A57FF",
+    "#946DFF",
+    "#AE84FF",
+    "#C89AFF",
+    "#E2B1FF",
+    "#FCC8FF",
+    "#F5DDFF",
+    "#FFF0FF",
+    "#FFF7FC",
+  ],
+  tooltip: {
+    background: "rgba(0,0,0, 0.8)",
+    text: "white",
+    border: "rgba(255, 255, 255, 0.2)",
+  },
+  primary: "#E576FF",
+  green: "#31E584",
+  darkGreen: "#30a467",
+  red: "#FF6363",
+  gray: "#ABABAD",
+  grayBg: "rgba(255, 255, 255, 0.1)",
+  skeleton: {
+    start: "rgba(255, 255, 255, 0.1)",
+    end: "rgba(255, 255, 255, 0.2)",
+  },
+  toggle: {
+    background: "rgba(50, 50, 50, 0.10)",
+    selectedBg: "#FCF2FF",
+    border: "rgba(255, 255, 255, 0.2)",
+    unselected: "#BAC4DC",
+    selected: "#0B0C10",
+    hover: "rgba(50, 50, 50, 0.20)",
+  },
+  input: {
+    background: "rgba(50, 50, 50, 0.10)",
+    border: "rgba(255, 255, 255, 0.2)",
+  },
+  text: {
+    primary: "#FFFFFF",
+    secondary: "#BAC4DC",
+  },
+  background: {
+    primary: "rgba(50, 50, 50, 0.1)",
+    secondary: "rgba(50, 50, 50, 0.2)",
+  },
+  border: {
+    primary: "rgba(255, 255, 255, 0.2)",
+  },
+  table: {
+    evenRow: "rgba(21, 22, 25, 0.1)",
+    oddRow: "rgba(255, 255, 255, 0.06)",
+    selectedRow: "rgba(255, 255, 255, 0.15)",
+  },
+};

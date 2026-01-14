@@ -1,0 +1,68 @@
+{
+  "translationPath": "./src/i18n/languages",
+  "languages": [
+    {
+      "name": "English",
+      "code": "en"
+    },
+    {
+      "name": "Spanish",
+      "code": "es"
+    },
+    {
+      "name": "French",
+      "code": "fr"
+    },
+    {
+      "name": "Japanese",
+      "code": "ja"
+    },
+    {
+      "name": "Portuguese",
+      "code": "pt"
+    },
+    {
+      "name": "Russian",
+      "code": "ru"
+    },
+    {
+      "name": "Turkish",
+      "code": "tr"
+    },
+    {
+      "name": "German",
+      "code": "de"
+    },
+    {
+      "name": "Italian",
+      "code": "it"
+    },
+    {
+      "name": "Chinese",
+      "code": "zh"
+    },
+    {
+      "name": "Greek",
+      "code": "el"
+    }
+  ],
+  "fixedWords": {
+    "all": {
+      "staking": "staking",
+      "stake": "stake",
+      "APY": "APY",
+      "NFT": "NFT",
+      "VET": "VET",
+      "VTHO": "VTHO",
+      "B3TR": "B3TR",
+      "VeChain": "VeChain",
+      "vechain": "vechain"
+    },
+    "it": {
+      "maturity": "maturazione"
+    }
+  },
+  "mainLanguage": "en",
+  "sortMainLanguageFileAlphabetically": true,
+  "sortTargetLanguageFilesAlphabetically": true
+}

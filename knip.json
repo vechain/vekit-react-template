@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": ["src/main.tsx", "test/setup/*.ts"],
+  "project": ["src/**/*.{ts,tsx}", "test/**/*.{ts,tsx}"],
+  "ignore": ["src/vite-env.d.ts"],
+  "ignoreBinaries": ["tsc", "eslint"],
+  "ignoreDependencies": ["@emotion/cache", "@emotion/react", "@emotion/styled"],
+  "vitest": {
+    "config": "vite.config.ts"
+  },
+  "typescript": {
+    "tsconfig": "tsconfig.json"
+  }
+}
+
